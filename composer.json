@@ -1,0 +1,36 @@
+{
+	"name": "vunamhung/kirki",
+	"description": "This is extend package for kirki package for WordPress.",
+	"keywords": [
+		"wordpress",
+		"toolkit"
+	],
+	"homepage": "https://github.com/vunamhung/kirki",
+	"license": "GPL-3.0+",
+	"support": {
+		"issues": "https://github.com/vunamhung/kirki/issues",
+		"source": "https://github.com/vunamhung/kirki"
+	},
+	"authors": [
+		{
+			"name": "Vu Nam Hung",
+			"email": "vunamhung@gmail.com",
+			"homepage": "https://github.com/vunamhung/",
+			"role": "Lead Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.6.0",
+		"aristath/kirki": "^3.0.45",
+		"vunamhung/wptoolkit": "^0.9.8"
+	},
+	"autoload": {
+		"files": [
+			"vendor/aristath/kirki/kirki.php",
+			"helpers.php"
+		],
+		"psr-4": {
+			"vnh\\": "."
+		}
+	}
+}
