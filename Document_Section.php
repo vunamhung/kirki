@@ -7,9 +7,8 @@ use Kirki;
 
 class Document_Section implements Bootable {
 	public $args;
-	public $config_id;
 
-	public function __construct($config_id, $args) {
+	public function __construct($args) {
 		$this->args = wp_parse_args($args,[
 			'type' => 'kirki-link',
 			'title' => __('Documentation', 'vnh_textdomain'),
@@ -17,8 +16,6 @@ class Document_Section implements Bootable {
 			'button_url' => '',
 			'priority' => 999,
 		]);
-
-		$this->config_id = $config_id;
 	}
 
 	public function boot() {
@@ -26,6 +23,6 @@ class Document_Section implements Bootable {
 	}
 
 	public function register_section() {
-		Kirki::add_section($this->config_id, $this->args);
+		Kirki::add_section(THEME_SLUG, $this->args);
 	}
 }

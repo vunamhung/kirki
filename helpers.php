@@ -13,7 +13,7 @@ function get_layout($layouts) {
 	return $layouts_array;
 }
 
-function build_fields($fields,$config_id) {
+function build_fields($fields) {
 	if (empty($fields)) {
 		return;
 	}
@@ -54,37 +54,8 @@ function build_fields($fields,$config_id) {
 						$args[$label] = $value;
 					}
 				}
-				Kirki::add_field($config_id, $args);
+				Kirki::add_field(THEME_SLUG, $args);
 			}
 		}
 	}
-}
-
-function build_preset_options($config, $presets, $section_name) {
-	$all_setting_ids = get_all_setting_ids($config, $section_name);
-
-	$all_field_default_values = [];
-	foreach ($all_setting_ids as $field) {
-		$all_field_default_values[$field] = Kirki::$fields[$field]['default'];
-	}
-
-	$complete_preset = [];
-	$complete_preset['1']['settings'] = $all_field_default_values;
-	$preset = isset($presets[$section_name]) ? $presets[$section_name] : [];
-	foreach ($preset as $preset_name => $section_value) {
-		$complete_preset[$preset_name]['label'] = $preset[$preset_name]['label'];
-		foreach ($section_value['settings'] as $group_prefix => $group_value) {
-			foreach ($group_value as $field_name => $field_value) {
-				$name = sprintf('%s_%s_%s', $section_name, $group_prefix, $field_name);
-				$complete_preset[$preset_name]['settings'][$all_setting_ids[$name]] = $field_value;
-
-				$complete_preset[$preset_name]['settings'] = wp_parse_args(
-					$complete_preset[$preset_name]['settings'],
-					$all_field_default_values
-				);
-			}
-		}
-	}
-
-	return $complete_preset;
 }
