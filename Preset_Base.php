@@ -8,9 +8,7 @@ abstract class Preset_Base extends Section_Base {
 	public $section_name;
 	public $fields;
 
-	public function __construct($config_id, $fields) {
-		parent::__construct($config_id);
-
+	public function __construct($fields) {
 		$this->fields = $fields;
 		$this->section_name = key($this->register_fields());
 	}

@@ -6,12 +6,6 @@ use Kirki;
 use vnh\contracts\Enqueueable;
 
 class Setup_Kirki implements Enqueueable {
-	public $config_id;
-
-	public function __construct($config_id) {
-		$this->config_id = $config_id;
-	}
-
 	public function boot() {
 		add_filter('kirki_config', [$this, 'url_path']);
 		add_action('widgets_init', [$this, 'add_config'], 99);
@@ -28,7 +22,7 @@ class Setup_Kirki implements Enqueueable {
 	}
 
 	public function add_config() {
-		Kirki::add_config($this->config_id, [
+		Kirki::add_config(THEME_SLUG, [
 			'option_type' => 'theme_mod',
 			'capability' => 'edit_theme_options',
 		]);
