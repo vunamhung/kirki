@@ -59,16 +59,16 @@
         },
         {
             "name": "vunamhung/wptoolkit",
-            "version": "0.9.19",
+            "version": "0.9.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vunamhung/wptoolkit.git",
-                "reference": "c7dab066db57ac2f0eaa556f3fa00ae930c37411"
+                "reference": "70ef24650134dd81f74ead9e4aeffdc1b1730224"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vunamhung/wptoolkit/zipball/c7dab066db57ac2f0eaa556f3fa00ae930c37411",
-                "reference": "c7dab066db57ac2f0eaa556f3fa00ae930c37411",
+                "url": "https://api.github.com/repos/vunamhung/wptoolkit/zipball/70ef24650134dd81f74ead9e4aeffdc1b1730224",
+                "reference": "70ef24650134dd81f74ead9e4aeffdc1b1730224",
                 "shasum": ""
             },
             "require": {
@@ -109,7 +109,7 @@
                 "toolkit",
                 "wordpress"
             ],
-            "time": "2020-03-03T01:10:42+00:00"
+            "time": "2020-03-03T04:34:05+00:00"
         }
     ],
     "packages-dev": [],
